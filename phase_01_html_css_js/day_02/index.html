@@ -6,23 +6,43 @@
     <title>Document</title>
     <style>
         h3{
-            color:green;
+            color: rgb(114, 19, 210);
         }
-
         button{
-            width: 200px;
+            color: black ;
+            width: 100px;
             padding: 20px;
             font-weight: bold;
-            touch-action: double-tap-zoom;
+            border: 10px black;
+            background-color: red;
         }
     </style>
 </head>
 <body>
     <h1>DOM 1</h1>
-    <h3>Welcome to my WebPage</h3>
-    <button>Exit</button>
+    <h3>Welcome to my Webpage</h3>
+    <button id = "sub">Exit</button>
 </body>
 </html>
-<script>
+<script> 
     console.log("Hello")
+    var btn = document.querySelector("#sub")
+    btn.addEventListener("click", evenButton)
+    var flag = false
+    function evenButton(){
+        // alert("Button is Clicked")
+        flag = !flag 
+        if(flag){
+            var h3 = document.querySelector("h3")
+            h3.innerText = "Welcome to my WebPage" 
+            var button = document.querySelector("button")
+            button.innerText = "Exit"
+            h3.style.color = "Green"
+        }else{
+            var h3 = document.querySelector("h3")
+            h3.innerText = "Okay! Thanks for Visiting"
+            btn.innerHTML = "Enter"
+            h3.style.color = "Green"
+        }
+    }
 </script>
